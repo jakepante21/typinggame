@@ -1,0 +1,427 @@
+// FONTS
+
+$font-primary : 'Poppins', sans-serif;
+$font-secondary : 'Open Sans', sans-serif;
+
+// COLORS
+
+$clr-primary : #26252C;
+// 38, 37, 44
+$clr-secondary : #17301C;
+// 23, 48, 28
+$clr-third : #56282D;
+// 86, 40, 45
+$clr-fourth : #D5C020;
+// 213, 192, 32
+$clr-fifth : #211C1F;
+// 33, 28, 31
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $font-primary;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background-image: radial-gradient(circle,$clr-fifth,$clr-primary);
+}
+
+
+// NAVBAR
+
+nav{
+	background-color: rgba(0,0,0,0.4);
+	padding: 1em;
+
+	div{
+		h1{
+			color: $clr-fourth;
+			font-family: $font-primary;
+			margin: 0;
+			text-shadow: 2px 3px $clr-third;
+			cursor: pointer;
+		}
+	}
+}
+
+// FirstSection
+
+section{
+
+	.caption{
+		text-align: center;
+		margin-top: 1em;
+		margin-bottom: 3em;
+
+		span,
+		h1{
+			color: $clr-fourth;
+			text-shadow: 2px 3px $clr-third;
+		}
+	}
+
+	.game-container{
+		border: 5px solid $clr-fourth;
+		height: 60vh;
+		width: 65vw;
+		margin: 0 auto;
+		box-shadow: 8px 10px $clr-third;
+		display: grid;
+		grid-template-columns: repeat(7,1fr);
+		grid-template-rows: repeat(4,1fr);
+		// 1 2 3 4 5 6 7 8
+
+		.level-container{
+			grid-column: 1/3;
+			grid-row: 1/2;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+			z-index: 2;
+
+			span{
+				font-size: 2em;
+				color: $clr-fourth;
+				text-shadow: 2px 3px $clr-third;
+
+				span{
+					font-size: 1em;
+				}
+			}
+		}
+
+		.word-container{
+			grid-column: 3/6;
+			grid-row: 1/3;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+			z-index: 2;
+
+			h6{
+				font-size: 4em;
+				color: #FFF;
+				text-transform: lowercase;
+				text-shadow: 1px 1px 5px #FFF;
+				font-weight: bold;
+
+				.ans-match{
+					color: $clr-fourth;
+					text-shadow: 5px 5px 10px $clr-third;
+					font-weight: bold;
+					// font-size: 4em;
+					text-transform: lowercase;
+				}
+			}
+		}
+
+		.score-container{
+			grid-column: 6/8;
+			grid-row: 1/2;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+			z-index: 2;
+
+			span{
+				font-size: 2em;
+				color: $clr-fourth;
+				span{
+					font-size: 1em;
+					text-shadow: 2px 3px $clr-third;
+				}
+			}
+		}
+
+		.answer-container{
+			grid-column: 3/6;
+			grid-row: 3/5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+			z-index: 2;
+
+			input{
+				background-color: transparent;
+				border: none;
+				outline: none;
+				border-bottom: 5px solid $clr-fourth;
+				width: 100%;
+				font-size: 2.5em;
+				color: $clr-fourth;
+				text-transform: lowercase;
+				text-align: center;
+				letter-spacing: 2px;
+				font-weight: bold;
+			}
+		}
+
+		.timer-container{
+			// position: absolute;
+			grid-column: 3/6;
+			grid-row: 2/4;
+			z-index: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// display: none;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+
+			span{
+				color: rgba(255,255,255,0.1);
+				font-size: 15em;
+				font-weight: bold;
+			}
+
+			.danger{
+				color: rgba(255,0,0,0.5);
+			}
+		}
+
+		.button-container{
+			grid-column: 3/6;
+			grid-row: 2/4;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+
+			button{
+				width: 100%;
+				height: 50%;
+				background-color: $clr-fourth;
+				border: none;
+				border-radius: 2em;
+				box-shadow: 1px 1px 10px 10px $clr-third;
+				color: $clr-third;
+				font-size: 3em;
+				font-weight: bold;
+				text-shadow: 2px 3px $clr-primary;
+				cursor: pointer;
+				outline: none;
+			}
+
+			button:hover{
+				background-color: $clr-third;
+				box-shadow: 1px 1px 10px 20px $clr-fourth;
+				color: $clr-fourth;
+			}
+		}
+
+		.button-off{
+			opacity: 0;
+			pointer-events: none;
+			z-index: -1;
+			// display: none;
+			transition: all 0.5s ease-in-out;
+		}
+
+		.button-on{
+			opacity: 1;
+			pointer-events: initial;
+			z-index: 1;
+			// display: none;
+			transition: all 0.5s ease-in-out;
+		}
+
+		.countdown-caption-container{
+			grid-column: 3/6;
+			grid-row: 1/2;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+
+			h1{
+				color: $clr-fourth;
+				text-shadow: 5px 10px $clr-third;
+				font-size: 3em;
+			}
+		}
+		.countdown-subcaption-container{
+			grid-column: 3/6;
+			grid-row: 2/3;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+
+			span{
+				color: $clr-fourth;
+				text-shadow: 1px 4px $clr-third;
+				font-size: 1.5em;
+			}
+		}
+		.countdown-container{
+			grid-column: 3/6;
+			grid-row: 3/4;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+			scale: (0.50);
+			transition: all 0.5s ease-in-out;
+
+			span{
+				color: $clr-fourth;
+				text-shadow: 3px 5px $clr-third;
+				font-size: 5em;
+			}
+		}
+
+		.countdown-on{
+			opacity: 1;
+			scale: (1);
+			pointer-events: initial;
+			transition: all 0.5s ease-in-out;
+		}
+
+		.game-on{
+			opacity: 1;
+			scale: (1);
+			pointer-events: initial;
+			transition: all 0.5s ease-in-out;
+		}
+	}
+
+	.modal-main-container{
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		background-color: rgba(0,0,0,0.8);
+		pointer-events: none;
+		opacity: 0;
+		// display: none;
+		transition: all .5s ease-in-out;
+
+		.modal-container{
+			background-color: $clr-fourth;
+			box-shadow: 8px 10px $clr-third;
+			height: 45vh;
+			width: 40vw;
+			position: absolute;
+			z-index: 5;
+			top : 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			transform: translate(-50%,-200%);
+			transition: all .5s ease-in-out;
+
+			.game-over,
+			.prevhigh-score,
+			.try-again,
+			.yes-button{
+				padding: 0.5em;
+				text-transform: uppercase;
+				color: $clr-third;
+				text-shadow: 1px 2px #000;
+
+			}
+
+			.game-over,
+			.try-again{
+				h1{
+					font-size: 2em;
+				}
+			}
+
+			.yes-button{
+				width: 50%;
+
+				button{
+					width: 100%;
+					padding: 0.5em;
+					background-color: $clr-third;
+					outline: none;
+					border: none;
+					font-weight: bold;
+					color: $clr-fourth;
+					text-shadow: 1px 1px #000;
+					border-radius: 10em;
+					cursor: pointer;
+				}
+
+				button:hover{
+					background-color: $clr-primary;
+					// color: $clr-third;
+				}
+			}
+		}
+	}
+
+	.modal-on{
+		z-index: 5;
+		pointer-events: initial;
+		opacity: 1;
+		transition: all .5s ease-in-out;
+
+		.modal-container-on{
+			transform: translate(-50%,-50%);
+			transition: all .5s ease-in-out;
+		}
+	}
+
+	.audio-button{
+		margin: 1em;
+		button{
+			background-color: $clr-fourth;
+			color: $clr-third;
+			border: none;
+			padding: 0.5em;
+			font-weight: bold;
+			box-shadow: 3px 4px $clr-third;
+			border-radius: 10em;
+			cursor: pointer;
+		}
+
+		button:hover{
+			background-color: $clr-third;
+			color: $clr-fourth;
+			box-shadow: 3px 4px $clr-fourth;
+		}
+	}
+}
+
+// ANIMATION
