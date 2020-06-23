@@ -51,7 +51,7 @@ export const generateWord = (level) =>{
 	else if(level === 6){
 		for(var s = 0; s <= words.length - 1 ; s++){
 			if(words[s].length >= 11 && words[s].length <= 20){
-				newWords.push(words[x]);
+				newWords.push(words[s]);
 			}
 		}
 		let index = Math.floor(Math.random() * (newWords.length - 1));
