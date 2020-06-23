@@ -172,7 +172,6 @@ section{
 				width: 100%;
 				font-size: 2.5em;
 				color: $clr-fourth;
-				text-transform: lowercase;
 				text-align: center;
 				letter-spacing: 2px;
 				font-weight: bold;
@@ -422,6 +421,38 @@ section{
 			box-shadow: 3px 4px $clr-fourth;
 		}
 	}
+
+	.sorry-container{
+		display: none;
+	}
 }
 
+
 // ANIMATION
+
+// MEDIA QUERY
+
+@media only screen and (max-width: 1024px){
+	section{
+		.caption,
+		.game-container,
+		.audio-button{
+			display: none;
+		}
+
+		.sorry-container{
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 80%;
+			text-align: center;
+
+			h1{
+				color: $clr-fourth;
+				text-shadow: 2px 3px $clr-third;
+			}
+		}
+	}
+}

@@ -181,6 +181,9 @@ const Game = ({startGame,isloaded,gameStart,startCountdown,startTheGame,gameStar
 				<div className="audio-button">
 					<button onClick={changeMusic}>Music {music.aMusic ? "Off" : "On"}</button>
 				</div>
+				<div className="sorry-container">
+					<h1>Sorry! This Game is not available for mobile and table devices.</h1>
+				</div>
 			</section>
 		</Fragment>
 	)

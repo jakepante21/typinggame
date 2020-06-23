@@ -131,7 +131,6 @@ section .game-container .answer-container input {
   width: 100%;
   font-size: 2.5em;
   color: #D5C020;
-  text-transform: lowercase;
   text-align: center;
   letter-spacing: 2px;
   font-weight: bold;
@@ -344,6 +343,30 @@ section .audio-button button:hover {
   background-color: #56282D;
   color: #D5C020;
   box-shadow: 3px 4px #D5C020;
+}
+section .sorry-container {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  section .caption,
+section .game-container,
+section .audio-button {
+    display: none;
+  }
+  section .sorry-container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+  }
+  section .sorry-container h1 {
+    color: #D5C020;
+    text-shadow: 2px 3px #56282D;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
