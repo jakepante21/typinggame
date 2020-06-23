@@ -13,53 +13,53 @@ export const generateWord = (level) =>{
 		let index = Math.floor(Math.random() * (newWords.length - 1));
 		return newWords[index];
 	}else if(level === 2){
-		for(var x = 0; x <= words.length - 1 ; x++){
-			if(words[x].length <= 4){
-				newWords.push(words[x]);
+		for(var y = 0; y <= words.length - 1 ; y++){
+			if(words[y].length <= 4){
+				newWords.push(words[y]);
 			}
 		}
 		let index = Math.floor(Math.random() * (newWords.length - 1));
 		return newWords[index];
 	}
 	else if(level === 3){
-		for(var x = 0; x <= words.length - 1 ; x++){
-			if(words[x].length <= 5){
-				newWords.push(words[x]);
+		for(var z = 0; z <= words.length - 1 ; z++){
+			if(words[z].length <= 5){
+				newWords.push(words[z]);
 			}
 		}
 		let index = Math.floor(Math.random() * (newWords.length - 1));
 		return newWords[index];
 	}
 	else if(level === 4){
-		for(var x = 0; x <= words.length - 1 ; x++){
-			if(words[x].length >= 6 && words[x].length <= 7){
-				newWords.push(words[x]);
+		for(var q = 0; q <= words.length - 1 ; q++){
+			if(words[q].length >= 6 && words[q].length <= 7){
+				newWords.push(words[q]);
 			}
 		}
 		let index = Math.floor(Math.random() * (newWords.length - 1));
 		return newWords[index];
 	}
 	else if(level === 5){
-		for(var x = 0; x <= words.length - 1 ; x++){
-			if(words[x].length >= 8 && words[x].length <= 10){
-				newWords.push(words[x]);
+		for(var r = 0; r <= words.length - 1 ; r++){
+			if(words[r].length >= 8 && words[r].length <= 10){
+				newWords.push(words[r]);
 			}
 		}
 		let index = Math.floor(Math.random() * (newWords.length - 1));
 		return newWords[index];
 	}
 	else if(level === 6){
-		for(var x = 0; x <= words.length - 1 ; x++){
-			if(words[x].length >= 11 && words[x].length <= 20){
+		for(var s = 0; s <= words.length - 1 ; s++){
+			if(words[s].length >= 11 && words[s].length <= 20){
 				newWords.push(words[x]);
 			}
 		}
 		let index = Math.floor(Math.random() * (newWords.length - 1));
 		return newWords[index];
 	}else{
-		for(var x = 0; x <= words.length - 1 ; x++){
-			if(words[x].length > 20){
-				newWords.push(words[x]);
+		for(var t = 0; t <= words.length - 1 ; t++){
+			if(words[t].length > 20){
+				newWords.push(words[t]);
 			}
 		}
 		let index = Math.floor(Math.random() * (newWords.length - 1));

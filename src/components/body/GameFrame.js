@@ -12,14 +12,12 @@ const GameFrame = ({word,isMatch,level,score,isEndGame,tryAgain,newEndGame}) =>{
 	const [audio] = useState(new Audio(sound));
 	const [check] = useState(new Audio(correct));
 
-	const [timer,setTimer] = useState(15);
+	// const [timer,setTimer] = useState(15);
 
 	useEffect(() => {
 		setGameWord({...gameWord,aWord : word});
 		// newMatch(false);
 	},[word])
-
-	let intervalId = null;
 
 	useEffect(() => {
 		if(gameWord.aWord !== null){
@@ -57,7 +55,6 @@ const GameFrame = ({word,isMatch,level,score,isEndGame,tryAgain,newEndGame}) =>{
 		let answerDom = document.querySelector("#answer");
 		let levelDom = document.querySelector("#level");
 		let scoreDom = document.querySelector("#score");
-		let timerDom = document.querySelector("#timer");
 
 		levelDom.innerHTML = level;
 		scoreDom.innerHTML = score;

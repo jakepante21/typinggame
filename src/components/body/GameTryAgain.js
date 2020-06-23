@@ -42,7 +42,7 @@ const GameTryAgain = ({endGame,setStart,newEndGame}) =>{
 		if(game.startGame){
 			setStart(true)
 		}
-	},[game.startGame])
+	},[game])
 
 	useEffect(() => {
 		if(game.isendGame === false){
